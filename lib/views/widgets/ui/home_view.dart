@@ -21,20 +21,15 @@ class HomeView extends StatelessWidget {
               height: 50,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Container(
-                height: 200,
-                width: 500,
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(85)),
-                child: Image(
-                  fit: BoxFit.fitWidth,
-                  image: NetworkImage(
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSNWQqv7Dhbhd2PIHs8pXYWEpTTsYHl3EtBA&s",
-                      scale: 1.0),
-                ),
-              ),
-            ),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Container(
+                  height: 220,
+                  decoration: BoxDecoration(
+                      image: const DecorationImage(
+                          fit: BoxFit.contain,
+                          image: AssetImage("assets/images/home_image1.png")),
+                      borderRadius: BorderRadius.circular(15)),
+                )),
             SizedBox(
               height: 20,
             ),
@@ -54,40 +49,45 @@ class HomeView extends StatelessWidget {
                           );
                         }
                         if (snapshot.hasData) {
-                          return Card(
-                            color: const Color.fromARGB(255, 51, 49, 49),
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 15),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  ReausableRow(
-                                      title: "Total",
-                                      value: snapshot.data!.cases.toString()),
-                                  ReausableRow(
-                                      title: "Deaths",
-                                      value: snapshot.data!.deaths.toString()),
-                                  ReausableRow(
-                                      title: "Recovered",
-                                      value:
-                                          snapshot.data!.recovered.toString()),
-                                  ReausableRow(
-                                      title: "Active",
-                                      value: snapshot.data!.active.toString()),
-                                  ReausableRow(
-                                      title: "Criticle",
-                                      value:
-                                          snapshot.data!.critical.toString()),
-                                  ReausableRow(
-                                      title: "Today Deaths",
-                                      value: snapshot.data!.todayDeaths
-                                          .toString()),
-                                  ReausableRow(
-                                      title: "Today Recovered",
-                                      value: snapshot.data!.todayRecovered
-                                          .toString()),
-                                ],
+                          return Container(
+                            color: Color.fromARGB(255, 20, 20, 18),
+                            child: Card(
+                              color: Color.fromARGB(255, 57, 58, 49),
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 15),
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    ReausableRow(
+                                        title: "Total Cases",
+                                        value: snapshot.data!.cases.toString()),
+                                    ReausableRow(
+                                        title: "Total Deaths",
+                                        value:
+                                            snapshot.data!.deaths.toString()),
+                                    ReausableRow(
+                                        title: "Recovered",
+                                        value: snapshot.data!.recovered
+                                            .toString()),
+                                    ReausableRow(
+                                        title: "Active",
+                                        value:
+                                            snapshot.data!.active.toString()),
+                                    ReausableRow(
+                                        title: "Criticle",
+                                        value:
+                                            snapshot.data!.critical.toString()),
+                                    ReausableRow(
+                                        title: "Today Deaths",
+                                        value: snapshot.data!.todayDeaths
+                                            .toString()),
+                                    ReausableRow(
+                                        title: "Today Recovered",
+                                        value: snapshot.data!.todayRecovered
+                                            .toString()),
+                                  ],
+                                ),
                               ),
                             ),
                           );

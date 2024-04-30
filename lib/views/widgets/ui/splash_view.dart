@@ -31,8 +31,7 @@ class _splash_viewState extends State<splash_view> {
           children: [
             CircleAvatar(
               radius: 100,
-              backgroundImage: NetworkImage(
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQed7hI8m0XUy_g-gmHkfbx8_P1hKNP4kbMPQ&s"),
+              backgroundImage: AssetImage("assets/images/abc.jpg"),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 50),
